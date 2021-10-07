@@ -1,0 +1,28 @@
+type UserPosts {
+  post_id: Int!
+  username: String!
+  title: String!
+}
+
+type Query {
+  collect(username: String!, title: String!): UserPosts @connector(type: "echo")
+
+  getUserPosts(id: Int!): [UserPosts]
+    @sequence(
+      steps: [
+        { query: "token" }
+        { query: "user" }
+        {
+          query: "postsByUser"
+          arguments: [{ name: "user_id", argument: "id" }]
+        }
+        {
+          query: "collect"
+          arguments: [
+            { name: "username", field: "name" }
+            { name: "title", field: "title" }
+          ]
+        }
+      ]
+    )
+}

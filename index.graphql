@@ -1,0 +1,3 @@
+schema @sdl(files: ["datalayer.graphql", "services/auth/index.graphql", "services/posts/index.graphql", "services/users/index.graphql"]) {
+  query: Query
+}

@@ -1,0 +1,17 @@
+type User {
+  id: Int!
+  name: String!
+  posts: [Post]
+}
+
+type Query {
+  user(id: Int!, access_token: String!): User
+    @rest(
+      endpoint: "https://$hostname/api/users/$id/"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+      configuration: "users_service"
+    )
+
+  getUser(id: Int!): User
+    @sequence(steps: [{ query: "token" }, { query: "user" }])
+}

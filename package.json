@@ -1,0 +1,26 @@
+{
+  "name": "stepzen-graphql-microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:auth": "nodemon services/auth/index.js",
+    "start:users": "nodemon services/users/index.js",
+    "start:posts": "nodemon services/posts/index.js",
+    "start": "yarn start:auth & yarn start:users & yarn start:posts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "json-server": "^0.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "localtunnel": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6"
+  }
+}

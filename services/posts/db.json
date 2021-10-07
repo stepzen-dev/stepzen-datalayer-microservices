@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First post",
+      "imageUrl": "https://picsum.photos/id/369/400/400",
+      "author": 1
+    },
+    {
+      "id": 2,
+      "title": "Second post",
+      "imageUrl": "https://picsum.photos/id/369/400/400",
+      "author": 1
+    },
+    {
+      "id": 3,
+      "title": "Third post",
+      "imageUrl": "https://picsum.photos/id/369/400/400",
+      "author": 2
+    }
+  ]
+}

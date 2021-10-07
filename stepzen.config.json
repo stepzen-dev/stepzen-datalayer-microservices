@@ -1,0 +1,4 @@
+{
+  "endpoint": "api/datalayer",
+  "root": "./"
+}

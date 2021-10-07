@@ -1,0 +1,12 @@
+type Auth {
+  id: Int!
+  access_token: String!
+}
+
+type Query {
+  token: Auth
+    @rest(
+      endpoint: "https://$hostname/api/token?grant_type=client_credentials&client_id=$client_id&client_secret=$client_secret"
+      configuration: "auth_service"
+    )
+}

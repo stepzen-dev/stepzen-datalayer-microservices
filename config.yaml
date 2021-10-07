@@ -1,0 +1,12 @@
+configurationset:
+  - configuration:
+      name: auth_service
+      client_id: test
+      client_secret: test123
+      hostname: ''
+  - configuration:
+      name: posts_service
+      hostname: ''
+  - configuration:
+      name: users_service
+      hostname: ''

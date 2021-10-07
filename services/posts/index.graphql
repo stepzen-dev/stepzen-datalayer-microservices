@@ -1,0 +1,24 @@
+type Post {
+  id: Int!
+  title: String!
+  imageUrl: String!
+  author: Int
+}
+
+type Query {
+  posts(access_token: String!): [Post]
+    @rest(
+      endpoint: "https://$hostname/api/posts"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+      configuration: "posts_service"
+    )
+
+  postsByUser(user_id: Int!, access_token: String!): [Post]
+    @rest(
+      endpoint: "https://$hostname/api/posts?author=$user_id"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+      configuration: "posts_service"
+    )
+
+  getPosts: [Post] @sequence(steps: [{ query: "token" }, { query: "posts" }])
+}
